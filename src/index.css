@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for better text rendering */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force hardware acceleration and prevent text blur */
+  body {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+
+  /* Prevent blurry text during scroll */
+  * {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Improve text clarity on mobile */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Ensure minimum readable font size */
+      letter-spacing: -0.01em;
+      text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Enhance text sharpness for headings */
+    h1, h2, h3, h4, h5, h6 {
+      transform: translateY(0);
+      backface-visibility: hidden;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease-out;
+}
