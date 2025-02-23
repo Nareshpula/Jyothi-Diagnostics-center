@@ -4,8 +4,11 @@ import OrganTests from '../components/OrganTests';
 import Services from '../components/Services';
 import MriTesla from '../components/MriTesla';
 import UltrasoundServices from '../components/UltrasoundServices';
+import StatisticsSection from '../components/StatisticsSection';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Contact from '../components/Contact';
+import GoogleReviews from '../components/GoogleReviews';
+import VisitUs from '../components/VisitUs';
+import ContactForm from '../components/ContactForm';
 
 const Home = () => {
   return (
@@ -15,8 +18,11 @@ const Home = () => {
       <Services />
       <MriTesla />
       <UltrasoundServices />
+      <StatisticsSection />
       <WhyChooseUs />
-      <Contact />
+      <GoogleReviews />
+      <VisitUs />
+      <ContactForm />
     </>
   );
 };

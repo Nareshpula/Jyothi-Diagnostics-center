@@ -1,29 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { UserCog, Building2, Heart, Globe } from 'lucide-react';
-
-const features = [
-  {
-    icon: <UserCog className="w-8 h-8 text-blue-600" aria-label="Expert Medical Team Icon" />,
-    title: "Expert Medical Team",
-    description: "Experienced professionals providing top-quality care and diagnostics."
-  },
-  {
-    icon: <Building2 className="w-8 h-8 text-pink-600" aria-label="State-of-the-Art Facilities Icon" />,
-    title: "State-of-the-Art Facilities",
-    description: "Advanced equipment and modern infrastructure for accurate diagnostics."
-  },
-  {
-    icon: <Heart className="w-8 h-8 text-red-600" aria-label="Comprehensive Patient Care Icon" />,
-    title: "Comprehensive Patient Care",
-    description: "Personalized diagnostic services with patient-centered care."
-  },
-  {
-    icon: <Globe className="w-8 h-8 text-green-600" aria-label="National Reputation Icon" />,
-    title: "National Reputation",
-    description: "Trusted across regions for reliable diagnostic services."
-  }
-];
+import { User, ScanLine, HeartPulse, FileText } from 'lucide-react';
 
 const WhyChooseUs = () => {
   return (
@@ -38,24 +15,24 @@ const WhyChooseUs = () => {
             <p className="text-base md:text-lg text-gray-600 mb-8">
               Jyothi Diagnostic Centre is committed to providing accurate, timely, and affordable diagnostic services with a patient-first approach.
             </p>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {features.map((feature, index) => ( 
                 <motion.div
                   key={index}
-                  className="flex items-start space-x-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="flex items-start space-x-4 bg-[#C9D6AE] rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
                 >
-                  <div className="p-3 rounded-lg bg-gray-50 flex-shrink-0">
+                  <div className="p-3 rounded-lg bg-white/90 backdrop-blur-sm flex-shrink-0">
                     {feature.icon}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-800 mb-1">
+                    <h3 className="font-semibold text-lg text-gray-800 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600">{feature.description}</p>
+                    <p className="text-gray-700 leading-relaxed">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -72,7 +49,7 @@ const WhyChooseUs = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80"
+                src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/Medical-Team.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL01lZGljYWwtVGVhbS53ZWJwIiwiaWF0IjoxNzQwMjEyNTI1LCJleHAiOjE4OTc4OTI1MjV9.Lz6ySfGE7DBDIiyRzbnv89gorl23BF2PMoOTgvxIPQo"
                 alt="Medical team providing diagnostic services"
                 className="w-full h-full object-cover"
               />
@@ -84,5 +61,28 @@ const WhyChooseUs = () => {
     </section>
   );
 };
+
+const features = [
+  {
+    icon: <User className="w-8 h-8 text-blue-600" aria-label="Expert Radiologist Icon" />, 
+    title: "Expert Radiologists",
+    description: "Experienced professionals providing top-quality care and diagnostics."
+  },
+  {
+    icon: <ScanLine className="w-8 h-8 text-pink-600" aria-label="MRI Scan Icon" />, 
+    title: "Cutting-Edge Technology",
+    description: "Advanced equipment and modern infrastructure for accurate diagnostics."
+  },
+  {
+    icon: <HeartPulse className="w-8 h-8 text-red-600" aria-label="Patient-Centric Approach Icon" />,
+    title: "Patient-Centric Approach",
+    description: "Focusing on comfort, clarity, and individualized patient care throughout."
+  },
+  {
+    icon: <FileText className="w-8 h-8 text-green-600" aria-label="Rapid Reporting Icon" />,
+    title: "Rapid Reporting",
+    description: "Providing fast, accurate results to facilitate timely clinical decisions."
+  }
+];
 
 export default WhyChooseUs;
