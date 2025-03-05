@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const organs = [
   {
@@ -45,18 +46,34 @@ const organs = [
 
 const OrganTests = () => {
   return (
-    <section className="py-16 bg-[#e4deea]">
+    <motion.section
+      className="py-16 bg-[#e4deea]"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-20%" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-center mb-12">
+        <motion.h2
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-20%" }}
+          transition={{ duration: 0.6 }}
+        >
           <span className="text-3xl md:text-4xl font-bold text-blue-900">Get to the right tests by </span>
           <span className="text-3xl md:text-4xl font-bold text-red-500">Organs</span>
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {organs.map((organ, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transform hover:scale-105 hover:bg-[#e3f3fb] transition-all duration-300 cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="flex flex-col items-center">
                 <div className="w-24 h-24 mb-4 rounded-full bg-gray-100 overflow-hidden">
@@ -70,11 +87,17 @@ const OrganTests = () => {
                   {organ.name}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <button className="relative overflow-hidden group bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
             <span className="relative z-10 flex items-center justify-center">
               <span>View More</span>
@@ -95,9 +118,9 @@ const OrganTests = () => {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

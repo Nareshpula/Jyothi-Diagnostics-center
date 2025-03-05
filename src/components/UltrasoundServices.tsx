@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const UltrasoundServices = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative py-20 overflow-hidden bg-white">
       {/* Background Pattern */}
@@ -42,6 +44,10 @@ const UltrasoundServices = () => {
             </motion.p>
             <motion.button 
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              onClick={() => {
+                navigate('/ultrasound-pregnancy-scanning');
+                window.scrollTo(0, 0);
+              }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

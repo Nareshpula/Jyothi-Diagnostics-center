@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const MriTesla = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
 
@@ -72,6 +74,10 @@ const MriTesla = () => {
             </motion.p>
             <motion.button
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              onClick={() => {
+                navigate('/tesla-mri-scan');
+                window.scrollTo(0, 0);
+              }}
               variants={textVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}

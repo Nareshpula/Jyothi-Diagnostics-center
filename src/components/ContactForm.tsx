@@ -62,16 +62,36 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full py-16 px-6 md:px-20 bg-gradient-to-r from-[#1c1c2b] via-[#2b2b3d] to-[#38384f] rounded-2xl shadow-2xl">
+    <section className="w-full py-16 px-6 md:px-20 bg-[#f9fbff] relative overflow-hidden rounded-2xl shadow-2xl">
+      {/* Decorative background elements */}
+      
       <motion.div 
-        initial={{ opacity: 0, y: 60 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.9, ease: "easeOut" }}
-        className="max-w-3xl mx-auto text-white text-center"
+        id="contact-form"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-3xl mx-auto text-gray-800 text-center"
       >
-        <h2 className="text-4xl font-extrabold mb-5">Get in Touch with Us</h2>
-        <p className="text-lg mb-10">Appointments, queries, or feedback – we're here to help with all your diagnostic needs.</p>
-        <Card className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg">
+        <motion.h2 
+          className="text-4xl font-extrabold mb-5 text-gray-900"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Get in Touch with Us
+        </motion.h2>
+        <motion.p 
+          className="text-lg mb-10 text-gray-700"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Appointments, queries, or feedback – we're here to help with all your diagnostic needs.
+        </motion.p>
+        <Card className="bg-white rounded-2xl shadow-xl border border-gray-100">
           <CardContent className="p-8">
             <form onSubmit={handleSubmit} className="space-y-5">
               <motion.input
@@ -81,8 +101,7 @@ export default function ContactForm() {
                 onChange={handleChange} 
                 placeholder="Your Name" 
                 required 
-                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#1c1c2b] focus:border-transparent outline-none text-gray-900 placeholder-gray-500" 
-                whileFocus={{ scale: 1.02 }}
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#1c1c2b] focus:border-transparent outline-none text-gray-900 placeholder-gray-500 transition-all duration-300" 
                 disabled={isSubmitting}
               />
               <motion.input 
@@ -92,8 +111,7 @@ export default function ContactForm() {
                 placeholder="Your Email" 
                 type="email" 
                 required 
-                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#1c1c2b] focus:border-transparent outline-none text-gray-900 placeholder-gray-500" 
-                whileFocus={{ scale: 1.02 }}
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#f9fbff] focus:border-transparent outline-none text-gray-900 placeholder-gray-500 transition-all duration-300" 
                 disabled={isSubmitting}
               />
               <motion.input 
@@ -102,8 +120,7 @@ export default function ContactForm() {
                 onChange={handleChange} 
                 placeholder="Your Phone Number" 
                 required 
-                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#1c1c2b] focus:border-transparent outline-none text-gray-900 placeholder-gray-500" 
-                whileFocus={{ scale: 1.02 }}
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#f9fbff] focus:border-transparent outline-none text-gray-900 placeholder-gray-500 transition-all duration-300" 
                 disabled={isSubmitting}
               />
               <motion.textarea 
@@ -113,26 +130,38 @@ export default function ContactForm() {
                 placeholder="Your Message" 
                 rows={4} 
                 required 
-                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#1c1c2b] focus:border-transparent outline-none resize-none text-gray-900 placeholder-gray-500" 
-                whileFocus={{ scale: 1.02 }}
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#f9fbff] focus:border-transparent outline-none resize-none text-gray-900 placeholder-gray-500 transition-all duration-300" 
                 disabled={isSubmitting}
               ></motion.textarea>
-              <motion.div whileHover={{ scale: 1.05 }}>
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Button 
                   type="submit" 
-                  className="w-full bg-[#1c1c2b] text-white hover:bg-[#10101a] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-[#1c1c2b] to-[#38384f] text-white hover:from-[#f9fbff] hover:to-[#2b2b3d] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg transition-all duration-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </motion.div>
               {success && (
-                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-green-600 font-semibold mt-2 p-3 bg-green-50 rounded-lg">
+                <motion.p 
+                  initial={{ opacity: 0, y: 10 }} 
+                  animate={{ opacity: 1, y: 0 }} 
+                  className="text-green-600 font-semibold mt-2 p-3 bg-green-50 rounded-lg shadow-sm"
+                >
                   ✅ Message sent successfully! We'll get back to you soon.
                 </motion.p>
               )}
               {error && (
-                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-500 font-semibold mt-2 p-3 bg-red-50 rounded-lg">❌ {error}</motion.p>
+                <motion.p 
+                  initial={{ opacity: 0, y: 10 }} 
+                  animate={{ opacity: 1, y: 0 }} 
+                  className="text-red-500 font-semibold mt-2 p-3 bg-red-50 rounded-lg shadow-sm"
+                >
+                  ❌ {error}
+                </motion.p>
               )}
             </form>
           </CardContent>

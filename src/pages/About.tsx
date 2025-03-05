@@ -1,21 +1,110 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Rocket, Heart, Lightbulb, Shield, Building2, History, Stethoscope, Microscope, Guitar as Hospital, Calendar, Stethoscope as UltrasoundIcon, Building, Cpu } from 'lucide-react';
+import { Target, Rocket, Heart, Lightbulb, Shield, Building2, History, Stethoscope, Microscope, Guitar as Hospital, Calendar, Stethoscope as UltrasoundIcon, Building, Cpu, ChevronDown } from 'lucide-react';
+
+const HeroSection = () => {
+  const words = "JYOTHI Diagnostics Center".split(" ");
+  
+  return (
+    <div className="relative h-screen overflow-hidden">
+      {/* Background Image with Gradient Overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/hospital-building-image.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL2hvc3BpdGFsLWJ1aWxkaW5nLWltYWdlLmpwZyIsImlhdCI6MTc0MDMxNDI2MCwiZXhwIjoxODk3OTk0MjYwfQ.Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs"
+          alt="Hospital Building"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-transparent"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-4 pt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="flex flex-wrap justify-center gap-x-4 text-5xl md:text-7xl font-bold text-white">
+            {words.map((word, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="inline-block drop-shadow-lg"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: words.length * 0.1 }}
+            className="mt-8 text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-lg"
+          >
+            Pioneering Excellence in Advanced Diagnostic Healthcare with Cutting-Edge Technology and Expert Care
+          </motion.p>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: (words.length + 1) * 0.1 }}
+          className="absolute bottom-12"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="text-white"
+          >
+            <ChevronDown size={32} />
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+const ZoomBox = () => {
+  return (
+    <div className="flex justify-center items-center h-[60vh] bg-gray-100">
+      <div className="zoom-box w-[90%] max-w-4xl bg-green-100 border border-green-200 rounded-2xl shadow-lg p-8 text-center will-change-transform">
+        <h1 className="text-3xl font-bold text-sky-600 mb-4 antialiased">
+          No. 1 Diagnostic Center in Madanapalle!
+        </h1>
+        <p className="text-base text-sky-500 antialiased">
+          Advanced MRI, CT, Ultrasound, and Digital X-Ray scans—all under one roof.
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
   return (
-    <div className="pt-24 bg-gradient-to-b from-[#fff8f8] to-[#e3f2fd]">
+    <div className="bg-gradient-to-b from-[#fff8f8] to-[#e3f2fd]">
+      <div className="min-h-screen">
+        <HeroSection />
+      </div>
+      <ZoomBox />
+
       {/* Vision & Mission Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-black mb-12">
+            Our Vision & Mission
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Vision */}
             <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-lg bg-pink-50">
-                  <Target className="w-8 h-8 text-[#ec93bc]" />
+                  <Target className="w-8 h-8 text-[#e41d4c]" />
                 </div>
-                <h2 className="ml-4 text-2xl font-bold text-[#ec93bc]">Our Vision</h2>
+                <h2 className="ml-4 text-2xl font-bold text-[#e41d4c]">Our Vision</h2>
               </div>
               <p className="text-gray-600 leading-relaxed">
                 To be the leading diagnostic center that sets new standards in healthcare
@@ -29,9 +118,9 @@ const About = () => {
             <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-lg bg-pink-50">
-                  <Rocket className="w-8 h-8 text-[#ec93bc]" />
+                  <Rocket className="w-8 h-8 text-[#e41d4c]" />
                 </div>
-                <h2 className="ml-4 text-2xl font-bold text-[#ec93bc]">Our Mission</h2>
+                <h2 className="ml-4 text-2xl font-bold text-[#e41d4c]">Our Mission</h2>
               </div>
               <p className="text-gray-600 leading-relaxed">
                 To leverage advanced technology and expertise in providing comprehensive
@@ -47,7 +136,7 @@ const About = () => {
       {/* Core Values Section */}
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-[#ec93bc] mb-12">
+          <h2 className="text-3xl font-bold text-center text-black mb-12">
             Our Core Values
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -55,9 +144,9 @@ const About = () => {
             <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-lg bg-pink-50">
-                  <Heart className="w-8 h-8 text-[#ec93bc]" />
+                  <Heart className="w-8 h-8 text-[#e41d4c]" />
                 </div>
-                <h3 className="ml-4 text-xl font-semibold text-gray-800">
+                <h3 className="ml-4 text-xl font-semibold text-[#e41d4c]">
                   Patient-Centric Care
                 </h3>
               </div>
@@ -71,9 +160,9 @@ const About = () => {
             <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-lg bg-pink-50">
-                  <Lightbulb className="w-8 h-8 text-[#ec93bc]" />
+                  <Lightbulb className="w-8 h-8 text-[#e41d4c]" />
                 </div>
-                <h3 className="ml-4 text-xl font-semibold text-gray-800">
+                <h3 className="ml-4 text-xl font-semibold text-[#e41d4c]">
                   Innovation & Technology
                 </h3>
               </div>
@@ -87,9 +176,9 @@ const About = () => {
             <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-lg bg-pink-50">
-                  <Shield className="w-8 h-8 text-[#ec93bc]" />
+                  <Shield className="w-8 h-8 text-[#e41d4c]" />
                 </div>
-                <h3 className="ml-4 text-xl font-semibold text-gray-800">
+                <h3 className="ml-4 text-xl font-semibold text-[#e41d4c]">
                   Integrity & Excellence
                 </h3>
               </div>
@@ -103,100 +192,56 @@ const About = () => {
       </section>
 
       {/* Collaboration Section */}
-      <section className="py-16 relative overflow-hidden">
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
-        <div className="absolute top-0 right-0 w-72 h-72 bg-purple-100 rounded-full filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 translate-y-1/2 -translate-x-1/2"></div>
+      <section className="relative flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-sky-50 via-white to-sky-50 py-16 px-6 md:px-20 rounded-2xl shadow-2xl overflow-hidden mx-4 my-16">
+        {/* Decorative background shapes */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="w-64 h-64 bg-sky-100 rounded-full blur-3xl opacity-50 absolute -top-20 -left-20"></div>
+          <div className="w-72 h-72 bg-sky-200 rounded-full blur-3xl opacity-40 absolute bottom-0 right-0"></div>
+        </div>
 
-        <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center mb-16 relative z-10"
+        {/* Text Content */}
+        <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0 relative z-10">
+          <motion.h2
+            className="text-4xl font-extrabold text-sky-700 mb-5 antialiased"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Partnering for Excellence
-              </span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Collaborating with Madanapalle's leading healthcare institutions to deliver
-              comprehensive diagnostic solutions and enhance patient care.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 relative z-10">
-            {[
-              {
-                icon: <Hospital className="w-12 h-12" />,
-                title: "Improved Healthcare Access",
-                description: "Strategic partnerships with leading hospitals enabling wider access to advanced diagnostic services.",
-                gradient: "from-blue-500 to-blue-600",
-                delay: 0
-              },
-              {
-                icon: <Microscope className="w-12 h-12" />,
-                title: "Advanced Medical Technology",
-                description: "Shared access to cutting-edge diagnostic equipment and technology platforms.",
-                gradient: "from-purple-500 to-purple-600",
-                delay: 0.2
-              },
-              {
-                icon: <Stethoscope className="w-12 h-12" />,
-                title: "Expert Medical Consultation",
-                description: "Collaborative approach with specialist doctors for accurate diagnosis and treatment planning.",
-                gradient: "from-pink-500 to-pink-600",
-                delay: 0.4
-              }
-            ].map((benefit, index) => (
-              <motion.div
-                key={index}
-                className="relative group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: benefit.delay }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-50 rounded-2xl transform group-hover:scale-[1.02] transition-transform duration-300"></div>
-                <div className="relative p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${benefit.gradient} p-3 mb-6 transform -rotate-6 group-hover:rotate-0 transition-transform duration-300`}>
-                    <div className="text-white w-full h-full">
-                      {benefit.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div 
-            className="text-center mt-12 relative z-10"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            Partnering for Excellence
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-700 leading-relaxed antialiased"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              View Our Hospital Network
-            </button>
-          </motion.div>
+            Collaborating with Madanapalle's leading healthcare institutions to deliver
+            comprehensive diagnostic solutions and enhance patient care.
+          </motion.p>
+        </div>
+
+        {/* Image Section with Effects */}
+        <div className="md:w-1/2 flex justify-center relative z-10">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-sky-300 to-sky-500 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+            <div className="absolute inset-0.5 bg-white rounded-[1.75rem] blur opacity-80"></div>
+            <img
+              src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b"
+              alt="Healthcare collaboration visual"
+              className="relative w-full max-w-lg h-[400px] rounded-[1.5rem] shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500 object-cover object-center"
+            />
+            <div className="absolute inset-0 rounded-[1.5rem] bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          </div>
         </div>
       </section>
 
       {/* Our Journey Section */}
-      <section className="py-16 bg-gradient-to-b from-[#fff8f8] to-[#e3f2fd]">
+      <section className="py-16 bg-[#dadada]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#ec93bc] mb-4">Our Journey</h2>
+            <h2 className="text-3xl font-bold text-[#000000] mb-4">Our Journey</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
               Since our establishment in 2015 by Dr. JYOTHI R.G, we have been committed
               to delivering excellence in diagnostic healthcare.
@@ -205,7 +250,7 @@ const About = () => {
 
           <div className="relative">
             <motion.div 
-              className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#ec93bc]"
+              className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#e15294]"
               initial={{ scaleY: 0, opacity: 0 }}
               whileInView={{ scaleY: 1, opacity: 0.3 }}
               viewport={{ once: true }}
@@ -219,43 +264,43 @@ const About = () => {
                   year: "2015",
                   title: "Foundation",
                   description: "Founded by Dr. JYOTHI R.G with a vision to provide advanced diagnostic services in Madanapalle.",
-                  icon: <Calendar className="w-8 h-8 text-[#ec93bc]" />
+                  icon: <Calendar className="w-8 h-8 text-[#e15294]" />
                 },
                 {
                   year: "2017",
                   title: "Advanced Ultrasound",
                   description: "Installation of Advanced Ultrasound machines improving diagnostic accuracy.",
-                  icon: <UltrasoundIcon className="w-8 h-8 text-[#ec93bc]" />
+                  icon: <UltrasoundIcon className="w-8 h-8 text-[#e15294]" />
                 },
                 {
                   year: "2019",
                   title: "Hospital Collaborations",
                   description: "Collaboration with leading hospitals in Madanapalle to extend diagnostic services.",
-                  icon: <Building className="w-8 h-8 text-[#ec93bc]" />
+                  icon: <Building className="w-8 h-8 text-[#e15294]" />
                 },
                 {
                   year: "2021",
                   title: "Digital MRI Installation",
                   description: "Acquired Digital MRI with 3 Tesla Platform offering high-resolution imaging.",
-                  icon: <Cpu className="w-8 h-8 text-[#ec93bc]" />
+                  icon: <Cpu className="w-8 h-8 text-[#e15294]" />
                 },
                 {
                   year: "2023",
                   title: "Equipment Upgrade",
                   description: "Upgraded with High-performance CT Scanners and Modern Digital X-rays.",
-                  icon: <Microscope className="w-8 h-8 text-[#ec93bc]" />
+                  icon: <Microscope className="w-8 h-8 text-[#e15294]" />
                 },
                 {
                   year: "2024",
                   title: "Expanded Partnerships",
                   description: "Expanded partnerships with more hospitals to enhance patient care access.",
-                  icon: <Building2 className="w-8 h-8 text-[#ec93bc]" />
+                  icon: <Building2 className="w-8 h-8 text-[#e15294]" />
                 },
                 {
                   year: "2025",
                   title: "Elevating Healthcare Standards",
                   description: "Leveraging advanced technology and the expertise of top-tier doctors, Jyothi Diagnostic Center is emerging as Madanapalle's No.1 diagnostics provider.",
-                  icon: <History className="w-8 h-8 text-[#ec93bc]" />
+                  icon: <History className="w-8 h-8 text-[#e15294]" />
                 }
               ].map((milestone, index) => (
                 <motion.div
@@ -290,7 +335,7 @@ const About = () => {
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                        <span className="text-[#ec93bc]">{milestone.year}</span> - {milestone.title}
+                        <span className="text-[#e15294]">{milestone.year}</span> - {milestone.title}
                       </h3>
                       <p className="text-gray-600">{milestone.description}</p>
                     </motion.div>

@@ -4,11 +4,18 @@ import { motion } from 'framer-motion';
 
 const VisitUs = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white">
+    <motion.section
+      id="visit-us"
+      className="py-16 bg-[#f1edfd] text-gray-800"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-20%" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -17,7 +24,7 @@ const VisitUs = () => {
             Visit Us
           </motion.h2>
           <motion.p
-            className="text-white max-w-2xl mx-auto"
+            className="text-gray-700 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -46,11 +53,11 @@ const VisitUs = () => {
             >
               <div className="flex items-start gap-4">
                 <motion.div animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-                  <MapPin className="w-8 h-8 text-white" />
+                  <MapPin className="w-8 h-8 text-gray-800" />
                 </motion.div>
                 <div className="transform-gpu">
-                  <h3 className="font-bold text-lg text-white">Our Address</h3>
-                  <p className="text-white">
+                  <h3 className="font-bold text-lg text-gray-900">Our Address</h3>
+                  <p className="text-gray-700">
                     Jyothi Diagnostic Center,<br />
                     Balaji Commercial Complex,<br />
                     Opp. RTC Bus Stand, Near Desai Hospital,<br />
@@ -70,11 +77,11 @@ const VisitUs = () => {
             >
               <div className="flex items-start gap-4">
                 <motion.div animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-                  <Phone className="w-8 h-8 text-white" />
+                  <Phone className="w-8 h-8 text-gray-800" />
                 </motion.div>
                 <div className="transform-gpu">
-                  <h3 className="font-bold text-lg text-white">Contact Us</h3>
-                  <p className="text-white">
+                  <h3 className="font-bold text-lg text-gray-900">Contact Us</h3>
+                  <p className="text-gray-700">
                     Reception: 08571-224789<br />
                     Mobile: 9100752753<br />
                     Email: jyothidiagnosticsmpl@gmail.com
@@ -93,11 +100,11 @@ const VisitUs = () => {
             >
               <div className="flex items-start gap-4">
                 <motion.div animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-                  <Clock className="w-8 h-8 text-white" />
+                  <Clock className="w-8 h-8 text-gray-800" />
                 </motion.div>
                 <div className="transform-gpu">
-                  <h3 className="font-bold text-lg text-white">Working Hours</h3>
-                  <p className="text-white">
+                  <h3 className="font-bold text-lg text-gray-900">Working Hours</h3>
+                  <p className="text-gray-700">
                     CT & MRI Scans Emergency: 24/7 Hours<br />
                     OPD Mon-Sat: 09:00 AM IST – 03:30 PM IST<br />
                     Evening: 06:00 PM IST – 09:00 PM IST<br />
@@ -138,7 +145,7 @@ const VisitUs = () => {
         </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

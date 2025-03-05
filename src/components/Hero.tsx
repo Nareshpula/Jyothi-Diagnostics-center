@@ -7,9 +7,12 @@ const Hero = () => {
       <div className="absolute inset-0 w-full h-full">
         <video
           autoPlay
+          preload="auto"
           loop
           muted
           playsInline
+          loading="eager"
+          style={{ transform: 'translate3d(0, 0, 0)' }}
           className="w-full h-full object-cover"
         >
           <source

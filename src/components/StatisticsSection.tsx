@@ -4,10 +4,10 @@ import { Stethoscope, Brain, HeartPulse, Radiation } from "lucide-react";
 import { useInView } from "framer-motion";
 
 const stats = [
-  { icon: <Stethoscope className="w-10 h-10 text-indigo-600" />, label: "CT Scans", value: 20000 },
-  { icon: <Brain className="w-10 h-10 text-rose-500" />, label: "MRI Scans", value: 30000 },
-  { icon: <HeartPulse className="w-10 h-10 text-teal-500" />, label: "Ultrasound Scans", value: 50000 },
-  { icon: <Radiation className="w-10 h-10 text-amber-500" />, label: "Digital X-rays", value: 40000 },
+  { icon: <Stethoscope className="w-10 h-10 text-indigo-600" />, label: "CT Scans", value: 20000, showPlus: true },
+  { icon: <Brain className="w-10 h-10 text-rose-500" />, label: "MRI Scans", value: 30000, showPlus: true },
+  { icon: <HeartPulse className="w-10 h-10 text-teal-500" />, label: "Ultrasound Scans", value: 50000, showPlus: true },
+  { icon: <Radiation className="w-10 h-10 text-amber-500" />, label: "Digital X-rays", value: 40000, showPlus: true },
 ];
 
 const StatisticsSection = () => {
@@ -66,7 +66,7 @@ const StatisticsSection = () => {
             >
               <div className="mb-4">{stat.icon}</div>
               <span className="text-3xl font-bold text-gray-800 drop-shadow-sm">
-                {counts[index].toLocaleString()}
+                {counts[index].toLocaleString()}{stat.showPlus && '+'}
               </span>
               <p className="text-sm font-medium text-gray-700 mt-1">{stat.label}</p>
             </motion.div>
