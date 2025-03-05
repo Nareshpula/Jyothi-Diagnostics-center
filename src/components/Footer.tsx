@@ -1,7 +1,32 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
+  const location = useLocation();
+
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact-form');
+    
+    if (location.pathname === '/') {
+      contactSection?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form';
+    }
+  };
+
+  const handleVisitUsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const visitUsSection = document.getElementById('visit-us');
+    
+    if (location.pathname === '/') {
+      visitUsSection?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#visit-us';
+    }
+  };
+
   return (
     <footer className="bg-[#e5f9f8] text-black">
       <div className="container mx-auto px-4 py-12">
@@ -30,34 +55,36 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Home</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">About Us</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Services</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Contact</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Book Appointment</a></li>
+              <li><Link to="/" className="text-black/90 hover:text-black transition duration-300">Home</Link></li>
+              <li><Link to="/about" className="text-black/90 hover:text-black transition duration-300">About Us</Link></li>
+              <li><Link to="/#services" className="text-black/90 hover:text-black transition duration-300">Services</Link></li>
+              <li><a href="#contact-form" onClick={handleContactClick} className="text-black/90 hover:text-black transition duration-300">Contact</a></li>
+              <li><a href="#visit-us" onClick={handleVisitUsClick} className="text-black/90 hover:text-black transition duration-300">Visit Us</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Pathology Tests</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Cardiology</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Microbiology</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Molecular Diagnostics</a></li>
-              <li><a href="#" className="text-black/90 hover:text-black transition duration-300">Health Packages</a></li>
+              <li><Link to="/digital-xrays" className="text-black/90 hover:text-black transition duration-300">Digital X-rays</Link></li>
+              <li><Link to="/ultrasound-pregnancy-scanning" className="text-black/90 hover:text-black transition duration-300">Pregnancy Scans</Link></li>
+              <li><Link to="/ultrasound-scanning" className="text-black/90 hover:text-black transition duration-300">Ultrasound & Color Doppler</Link></li>
+              <li><Link to="/ct-scan" className="text-black/90 hover:text-black transition duration-300">CT Scan</Link></li>
+              <li><Link to="/tesla-mri-scan" className="text-black/90 hover:text-black transition duration-300">3.0 Tesla Open Flare MRI</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Working Hours</h4>
             <ul className="space-y-2">
-              <li className="text-black/90">Monday - Friday</li>
-              <li className="font-semibold">7:00 AM - 9:00 PM</li>
-              <li className="text-black/90 mt-4">Saturday</li>
-              <li className="font-semibold">7:00 AM - 9:00 PM</li>
+              <li className="text-black/90">CT & MRI Scans Emergency</li>
+              <li className="font-semibold">24/7 Hours</li>
+              <li className="text-black/90 mt-4">OPD Mon-Sat</li>
+              <li className="font-semibold">09:00 AM IST – 03:30 PM IST</li>
+              <li className="text-black/90">Evening</li>
+              <li className="font-semibold">06:00 PM IST – 09:00 PM IST</li>
               <li className="text-black/90 mt-4">Sunday</li>
-              <li className="font-semibold">8:00 AM - 2:00 PM</li>
+              <li className="font-semibold">10:00 AM IST – 02:00 PM IST</li>
             </ul>
           </div>
         </div>
