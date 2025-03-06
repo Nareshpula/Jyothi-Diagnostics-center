@@ -228,7 +228,7 @@ const About = () => {
             <div className="absolute -inset-4 bg-gradient-to-tr from-sky-300 to-sky-500 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
             <div className="absolute inset-0.5 bg-white rounded-[1.75rem] blur opacity-80"></div>
             <img
-              src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b"
+              src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/collaboration-image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9jb2xsYWJvcmF0aW9uLWltYWdlLndlYnAiLCJpYXQiOjE3MzkyNTcyMTgsImV4cCI6MTg5NjkzNzIxOH0.b_cN2Y3eoijSIDnFfN3-9VzqR9zNjZgvH9ZxnjAJ9kk"
               alt="Healthcare collaboration visual"
               className="relative w-full max-w-lg h-[400px] rounded-[1.5rem] shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500 object-cover object-center"
             />

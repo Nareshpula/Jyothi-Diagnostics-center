@@ -92,32 +92,21 @@ const OrganTests = () => {
         </div>
 
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-12 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <button className="relative overflow-hidden group bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <span className="relative z-10 flex items-center justify-center">
-              <span>View More</span>
-              <svg
-                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
+          <motion.p
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-lg md:text-xl font-medium px-8 py-4 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
+          >
+            Comprehensive Scanning of All Human Organs with Precision and Care.
+          </motion.p>
         </motion.div>
       </div>
     </motion.section>

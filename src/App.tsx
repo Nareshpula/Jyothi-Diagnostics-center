@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,11 +10,13 @@ import DigitalXrays from './pages/DigitalXrays.tsx';
 import UltrasoundPregnancyScanning from './pages/UltrasoundPregnancyScanning';
 import UltrasoundScanning from './pages/UltrasoundScanning';
 import TeslaMriScan from './pages/TeslaMriScan';
+import ScrollToTop from '@/components/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
