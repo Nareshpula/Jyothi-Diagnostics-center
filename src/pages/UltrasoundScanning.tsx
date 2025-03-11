@@ -153,17 +153,6 @@ const scanTypes = [
     ]
   },
   {
-    title: "Cardiac Ultrasound",
-    icon: <Heart className="w-8 h-8" />,
-    description: "Detailed imaging of heart structure and function.",
-    applications: [
-      "Heart valve assessment",
-      "Chamber evaluation",
-      "Blood flow analysis",
-      "Wall motion studies"
-    ]
-  },
-  {
     title: "Musculoskeletal Ultrasound",
     icon: <Scan className="w-8 h-8" />,
     description: "Dynamic imaging of muscles, tendons, and joints.",
@@ -186,6 +175,100 @@ const scanTypes = [
     ]
   }
 ];
+
+const specializedScanTypes = [
+  {
+    title: "Small Part Ultrasound Scans",
+    icon: <Scan className="w-8 h-8" />,
+    description: "High-precision imaging for small anatomical structures.",
+    applications: [
+      "Neck",
+      "Thyroid",
+      "Breast",
+      "Scrotum",
+      "Neuro-Sonogram",
+      "Chest",
+      "B-Scan",
+      "Other Small Parts"
+    ],
+    color: "bg-gradient-to-r from-emerald-500 to-teal-500"
+  },
+  {
+    title: "Gynecological Ultrasound Scans",
+    icon: <Activity className="w-8 h-8" />,
+    description: "Comprehensive women's health diagnostic services.",
+    applications: [
+      "T.V.S (Trans-Vaginal Sonography)",
+      "Follicular Study",
+      "Infertility Scan"
+    ],
+    color: "bg-gradient-to-r from-purple-500 to-pink-500"
+  }
+];
+
+const SpecializedScans = () => {
+  return (
+    <section className="py-20 bg-[#f8f9fa]">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Specialized Ultrasound Services
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Advanced diagnostic solutions for specific medical needs.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {specializedScanTypes.map((scan, index) => (
+            <motion.div
+              key={scan.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className={`${scan.color} p-6 text-white`}>
+                <div className="flex items-center mb-4">
+                  <div className="p-3 rounded-full bg-white/20 backdrop-blur-sm">
+                    {scan.icon}
+                  </div>
+                  <h3 className="text-xl font-bold ml-4">{scan.title}</h3>
+                </div>
+                <p className="text-white/90">{scan.description}</p>
+              </div>
+              
+              <div className="p-6">
+                <div className="grid grid-cols-2 gap-3">
+                  {scan.applications.map((app, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: i * 0.1 }}
+                      className="flex items-center space-x-2"
+                    >
+                      <Waves className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">{app}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const ScanTypes = () => {
   return (
@@ -310,6 +393,67 @@ const PreparationSection = () => {
   );
 };
 
+const CTABanner = () => {
+  const handleBookNowClick = () => {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form';
+    }
+  };
+
+  return (
+    <section className="py-16 bg-gradient-to-r from-[#e0f2fe] to-[#dbeafe] relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 bg-[url('https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/abstract-pattern.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL2Fic3RyYWN0LXBhdHRlcm4uc3ZnIiwiaWF0IjoxNzQxMjAwMDAwLCJleHAiOjE4OTg4ODAwMDB9.XYZ789')] opacity-5" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+      
+      <motion.div 
+        className="container mx-auto px-4 relative"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Advanced Diagnostics for Better Health
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-700 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Experience top-notch diagnostics with our expert doctors and state-of-the-art equipment.
+          </motion.p>
+          <motion.button
+            className="inline-flex items-center px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleBookNowClick}
+          >
+            Book Now
+          </motion.button>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
 const UltrasoundScanning = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -320,7 +464,9 @@ const UltrasoundScanning = () => {
       <HeroSection />
       <Overview />
       <ScanTypes />
+      <SpecializedScans />
       <PreparationSection />
+      <CTABanner />
     </div>
   );
 };

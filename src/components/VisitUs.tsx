@@ -106,9 +106,8 @@ const VisitUs = () => {
                   <h3 className="font-bold text-base text-gray-900">Working Hours</h3>
                   <p className="text-sm text-gray-700">
                     CT & MRI Scans Emergency: 24/7 Hours<br />
-                    OPD Mon-Sat: 09:00 AM IST – 03:30 PM IST<br />
-                    Evening: 06:00 PM IST – 09:00 PM IST<br />
-                    Sun: 10:00 AM IST – 02:00 PM IST
+                    OPD Mon-Sat: 09:00 AM IST – 09:00 PM IST<br />
+                    Sun: 10:30 AM IST – 01:00 PM IST
                   </p>
                 </div>
               </div>

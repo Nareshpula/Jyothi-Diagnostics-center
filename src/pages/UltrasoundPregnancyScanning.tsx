@@ -169,6 +169,31 @@ const scanTypes = [
       "Some fetal conditions like cleft lip, spinal defects may require 3D/4D scan for better assessment"
     ],
     color: "from-amber-500 to-yellow-500"
+  },
+  {
+    title: "Doppler Ultrasound",
+    image: "https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/Doppler-Ultrasound-Image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL0RvcHBsZXItVWx0cmFzb3VuZC1JbWFnZS53ZWJwIiwiaWF0IjoxNzQxNzExMTY2LCJleHAiOjE4OTkzOTExNjZ9.QMrQ7wmzj4lTl4VkakDsroOwYzvSICxQxBIXBDHAWxM",
+    icon: <Activity className="w-8 h-8" />,
+    points: [
+      "Performed after 28 weeks of pregnancy for optimal assessment",
+      "Comprehensive evaluation of fetal blood circulation and placental function",
+      "Advanced detection of blockages, abnormalities, or risks like IUGR or preeclampsia",
+      "Specialized monitoring of umbilical cord blood flow patterns",
+      "Integrated with biophysical profile for complete fetal assessment"
+    ],
+    color: "from-violet-500 to-purple-500"
+  },
+  {
+    title: "Biophysical Profile (BPP)",
+    image: "https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/Biophysical-Profile-image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL0Jpb3BoeXNpY2FsLVByb2ZpbGUtaW1hZ2Uud2VicCIsImlhdCI6MTc0MTcxMTUzNiwiZXhwIjoxODk5MzkxNTM2fQ.n2Jerbd9jKY61MyFF26BpEzmVwlSivGer4OOJEm3Xw4",
+    icon: <Brain className="w-8 h-8" />,
+    points: [
+      "Comprehensive assessment performed after 28 weeks to evaluate fetal well-being",
+      "Detailed examination of fetal movements, breathing, muscle tone, and amniotic fluid levels",
+      "Advanced screening to identify potential fetal distress or risks requiring medical intervention",
+      "Typically performed in conjunction with Doppler ultrasound for complete fetal assessment"
+    ],
+    color: "from-teal-500 to-cyan-500"
   }
 ];
 
@@ -181,10 +206,19 @@ const ScanTypes = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
+          className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8"
         >
           Our Comprehensive Pregnancy Scan Services
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16"
+        >
+          Advanced diagnostic imaging services with state-of-the-art technology for comprehensive prenatal care
+        </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8">
           {scanTypes.map((scan, index) => (
@@ -241,11 +275,73 @@ const UltrasoundPregnancyScanning = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const CTABanner = () => {
+    const handleBookNowClick = () => {
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = '/#contact-form';
+      }
+    };
+
+    return (
+      <section className="py-16 bg-gradient-to-r from-[#e0f2fe] to-[#dbeafe] relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 bg-[url('https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/abstract-pattern.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL2Fic3RyYWN0LXBhdHRlcm4uc3ZnIiwiaWF0IjoxNzQxMjAwMDAwLCJleHAiOjE4OTg4ODAwMDB9.XYZ789')] opacity-5" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+        
+        <motion.div 
+          className="container mx-auto px-4 relative"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              From Bump to Baby: A Journey of Love & Care
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-700 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Experience top-notch diagnostics with our expert doctors and state-of-the-art equipment.
+            </motion.p>
+            <motion.button
+              className="inline-flex items-center px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleBookNowClick}
+            >
+              Book Now
+            </motion.button>
+          </div>
+        </motion.div>
+      </section>
+    );
+  };
+
   return (
     <div className="bg-gradient-to-b from-[#fff8f8] to-[#e3f2fd]">
       <HeroSection />
       <PregnancyScansOverview />
       <ScanTypes />
+      <CTABanner />
     </div>
   );
 };

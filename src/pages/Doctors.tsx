@@ -25,7 +25,7 @@ const DoctorPage = () => {
               Specialization: <span className="font-normal">RADIOLOGY</span>
             </p>
             <p className="text-sm md:text-base font-semibold text-gray-700">
-              Work Experience: <span className="font-normal">20 years</span>
+              Work Experience: <span className="font-normal">15 years</span>
             </p>
             <p className="text-sm md:text-base font-semibold text-gray-700">
               Practice location: <span className="font-normal">MADANAPALLE</span>
@@ -36,9 +36,9 @@ const DoctorPage = () => {
               <section>
                 <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2">Education & Training</h3>
                 <ul className="list-disc list-inside text-sm md:text-base text-gray-700 space-y-1">
-                  <li>MBBS – SBHGMC, Maharashtra</li>
-                  <li>DNB - BARC hospital, Mumbai</li>
-                  <li>Fellowship in Fetal Medicine from Sankara Nethralaya, Chennai</li>
+                  <li>MBBS – Davangere, Karnataka</li>
+                  <li>DNB - Kamineni Hospitals, Hyderabad</li>
+                  <li>Fellowship in Fetal Medicine</li>
                   <li>Fellowship in Gynecological Imaging</li>
                   <li>Fellowship in Musculoskeletal (M.S.K) MRI Imaging</li>
                 </ul>
@@ -80,4 +80,4 @@ const DoctorPage = () => {
   );
 };
 
-export default DoctorPage;
+export default DoctorPage

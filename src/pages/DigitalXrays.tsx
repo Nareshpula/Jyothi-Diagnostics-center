@@ -249,6 +249,395 @@ const SpecialProcedures = () => {
   );
 };
 
+const IVPSection = () => {
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img
+                  src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/IVP-image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL0lWUC1pbWFnZS53ZWJwIiwiaWF0IjoxNzQxNzE0MTIxLCJleHAiOjE4OTkzOTQxMjF9.4-L-JtjCTpKsj1CCTUqZURsTIUWuM_NIh296dOmKYJw"
+                  alt="IVP Procedure"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Intravenous Pyelogram (IVP)
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  A specialized X-ray examination that uses contrast material to evaluate your urinary system, 
+                  including your kidneys, bladder, and ureters.
+                </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">Key Indications</h3>
+                    <ul className="space-y-2">
+                      {[
+                        "Kidney stones or blockages",
+                        "Blood in urine (Hematuria)",
+                        "Recurrent urinary tract infections",
+                        "Structural abnormalities",
+                        "Tumors or cysts in the urinary system"
+                      ].map((item, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          className="flex items-center text-gray-600"
+                        >
+                          <ArrowRight className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                          {item}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">Procedure Steps</h3>
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      <ol className="space-y-4">
+                        {[
+                          "Initial X-ray before contrast administration",
+                          "Intravenous injection of contrast material",
+                          "Series of X-rays at timed intervals",
+                          "Monitoring contrast material flow",
+                          "Final images after bladder emptying"
+                        ].map((step, index) => (
+                          <motion.li
+                            key={index}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                            className="flex items-start"
+                          >
+                            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mr-3 flex-shrink-0">
+                              {index + 1}
+                            </span>
+                            <span className="text-gray-700">{step}</span>
+                          </motion.li>
+                        ))}
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const MCUGSection = () => {
+  return (
+    <section className="py-20 bg-[#e3f3fb]">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Micturating Cystourethrogram (MCUG)
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  A specialized X-ray procedure that provides detailed imaging of the bladder and urethra during urination,
+                  essential for diagnosing various urinary tract conditions.
+                </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">Key Features</h3>
+                    <ul className="space-y-2">
+                      {[
+                        "Real-time fluoroscopic imaging during urination",
+                        "Detection of vesicoureteral reflux (VUR)",
+                        "Assessment of bladder function and anatomy",
+                        "Identification of urethral abnormalities",
+                        "Evaluation of urinary tract infections"
+                      ].map((item, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          className="flex items-center text-gray-600"
+                        >
+                          <ArrowRight className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                          {item}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">Procedure Overview</h3>
+                    <div className="bg-white rounded-xl p-6 shadow-md">
+                      <ol className="space-y-4">
+                        {[
+                          "Catheter insertion and contrast medium administration",
+                          "Bladder filling with contrast dye",
+                          "Real-time imaging during urination",
+                          "Assessment of urinary tract function",
+                          "Comprehensive evaluation of findings"
+                        ].map((step, index) => (
+                          <motion.li
+                            key={index}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                            className="flex items-start"
+                          >
+                            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mr-3 flex-shrink-0">
+                              {index + 1}
+                            </span>
+                            <span className="text-gray-700">{step}</span>
+                          </motion.li>
+                        ))}
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img
+                  src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/Micturating-Cystourethrogram-image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL01pY3R1cmF0aW5nLUN5c3RvdXJldGhyb2dyYW0taW1hZ2Uud2VicCIsImlhdCI6MTc0MTcxNTQwMSwiZXhwIjoxODk5Mzk1NDAxfQ.UbCvbEx4tZVZcAD9PCX8K-1moWqXz56_lz_bD-a5k9M"
+                  alt="MCUG Procedure"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-pink-200/30 to-indigo-200/30 rounded-full blur-xl" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const RGUSection = () => {
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Retrograde Urethrogram (RGU)
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  A specialized radiological procedure that provides detailed imaging of the urethra
+                  using contrast media, essential for diagnosing various urethral conditions and abnormalities.
+                </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">Primary Applications</h3>
+                    <ul className="space-y-2">
+                      {[
+                        "Diagnosis of urethral strictures (narrowing of the urethra)",
+                        "Detection of urethral injuries or trauma",
+                        "Evaluation of urethral fistulas or diverticula",
+                        "Assessment of post-surgical complications related to the urethra"
+                      ].map((item, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          className="flex items-center text-gray-600"
+                        >
+                          <ArrowRight className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                          {item}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3">Procedure Overview</h3>
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      <ol className="space-y-4">
+                        {[
+                          "Patient preparation and positioning",
+                          "Sterile technique and local anesthetic application",
+                          "Careful insertion of contrast medium",
+                          "Real-time fluoroscopic imaging",
+                          "Multiple view capture for comprehensive assessment"
+                        ].map((step, index) => (
+                          <motion.li
+                            key={index}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                            className="flex items-start"
+                          >
+                            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mr-3 flex-shrink-0">
+                              {index + 1}
+                            </span>
+                            <span className="text-gray-700">{step}</span>
+                          </motion.li>
+                        ))}
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img
+                  src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/RGU-image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL1JHVS1pbWFnZS53ZWJwIiwiaWF0IjoxNzQxNzE1OTQ0LCJleHAiOjE4OTkzOTU5NDR9.PFcobBkd_oysdtOu0_jQ8XmQK00PBQFbYHTC8N_YIog"
+                  alt="RGU Procedure"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-pink-200/30 to-indigo-200/30 rounded-full blur-xl" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const CTABanner = () => {
+  const handleBookNowClick = () => {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form';
+    }
+  };
+
+  return (
+    <section className="py-16 bg-gradient-to-r from-[#e0f2fe] to-[#dbeafe] relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 bg-[url('https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/abstract-pattern.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL2Fic3RyYWN0LXBhdHRlcm4uc3ZnIiwiaWF0IjoxNzQxMjAwMDAwLCJleHAiOjE4OTg4ODAwMDB9.XYZ789')] opacity-5" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+      
+      <motion.div 
+        className="container mx-auto px-4 relative"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Advanced Digital X-ray Technology for Precise Diagnostics
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-700 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Experience superior diagnostic imaging with our state-of-the-art digital X-ray technology.
+          </motion.p>
+          <motion.button
+            className="inline-flex items-center px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleBookNowClick}
+          >
+            Book Now
+          </motion.button>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
 const DigitalXrays = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -259,6 +648,10 @@ const DigitalXrays = () => {
       <HeroSection />
       <RoutineXrays />
       <SpecialProcedures />
+      <IVPSection />
+      <MCUGSection />
+      <RGUSection />
+      <CTABanner />
     </div>
   );
 };

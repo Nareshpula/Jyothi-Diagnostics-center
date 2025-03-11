@@ -80,11 +80,9 @@ const Footer = () => {
               <li className="text-black/90">CT & MRI Scans Emergency</li>
               <li className="font-semibold">24/7 Hours</li>
               <li className="text-black/90 mt-4">OPD Mon-Sat</li>
-              <li className="font-semibold">09:00 AM IST – 03:30 PM IST</li>
-              <li className="text-black/90">Evening</li>
-              <li className="font-semibold">06:00 PM IST – 09:00 PM IST</li>
+              <li className="font-semibold">09:00 AM IST – 09:00 PM IST</li>             
               <li className="text-black/90 mt-4">Sunday</li>
-              <li className="font-semibold">10:00 AM IST – 02:00 PM IST</li>
+              <li className="font-semibold">10:30 AM IST – 01:00 PM IST</li>
             </ul>
           </div>
         </div>
