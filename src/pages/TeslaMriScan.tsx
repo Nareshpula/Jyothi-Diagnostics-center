@@ -95,7 +95,7 @@ const MachineOverview = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4"
               >
-                Asia’s Third Installation, Based in Madanapalle.
+                Asia's Third Installation, Based in Madanapalle.
               </motion.div>
             </motion.div>
 
@@ -310,6 +310,228 @@ const WhyChooseUs = () => {
   );
 };
 
+const AngiographySection = () => {
+  return (
+    <section className="py-20 bg-[#e3f3fb]">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              >
+                Advanced MR Angiography
+              </motion.h2>
+              <p className="text-gray-600 leading-relaxed">
+                Experience superior vascular imaging with our state-of-the-art 3.0 Tesla MRI platform. 
+                Our non-invasive MR Angiography provides exceptional detail of blood vessels throughout 
+                the body, enabling precise diagnosis of vascular conditions.
+              </p>
+
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Key Advantages</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "High-resolution vessel visualization",
+                      "Non-invasive imaging technique",
+                      "No radiation exposure",
+                      "Detailed 3D vessel mapping",
+                      "Rapid examination time"
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                        className="flex items-center text-gray-600"
+                      >
+                        <ArrowRight className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Clinical Applications</h3>
+                  <div className="bg-white rounded-xl p-6 shadow-md">
+                    <ul className="space-y-3">
+                      {[
+                        "Brain aneurysm detection",
+                        "Carotid artery evaluation",
+                        "Peripheral vascular disease assessment",
+                        "Renal artery stenosis",
+                        "Aortic disease imaging"
+                      ].map((app, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          className="flex items-center"
+                        >
+                          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mr-3 flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="text-gray-700">{app}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img
+                  src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/angiography-image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL2FuZ2lvZ3JhcGh5LWltYWdlLndlYnAiLCJpYXQiOjE3NDE3NTE3NjMsImV4cCI6MTg5OTQzMTc2M30.P7o1wD0meGAirhqZizxkzXXW3ofgQXZOQKzy0pNJRW0"
+                  alt="MR Angiography"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-pink-200/30 to-indigo-200/30 rounded-full blur-xl" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const VenographySection = () => {
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              >
+                Advanced MR Venography
+              </motion.h2>
+              <p className="text-gray-600 leading-relaxed">
+                Experience superior venous system imaging with our cutting-edge 3.0 Tesla MRI platform. 
+                Our non-invasive MR Venography provides exceptional visualization of veins throughout 
+                the body, enabling precise diagnosis of venous conditions and abnormalities.
+              </p>
+
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Key Applications</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Cerebral venous system evaluation",
+                      "Deep vein thrombosis (DVT) detection",
+                      "Portal vein assessment",
+                      "Pelvic vein examination",
+                      "Venous malformation diagnosis"
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                        className="flex items-center text-gray-600"
+                      >
+                        <ArrowRight className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Clinical Benefits</h3>
+                  <div className="bg-gray-50 rounded-xl p-6">
+                    <ul className="space-y-3">
+                      {[
+                        "High-resolution venous system mapping",
+                        "Contrast-free imaging options available",
+                        "3D reconstruction capabilities",
+                        "Detailed visualization of vessel walls",
+                        "Comprehensive flow assessment"
+                      ].map((benefit, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          className="flex items-center"
+                        >
+                          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm mr-3 flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="text-gray-700">{benefit}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img
+                  src="https://voaxktqgbljtsattacbn.supabase.co/storage/v1/object/sign/sahasra-hospital-images/Jyothi-Diagnosis/Venography-image.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWhhc3JhLWhvc3BpdGFsLWltYWdlcy9KeW90aGktRGlhZ25vc2lzL1Zlbm9ncmFwaHktaW1hZ2Uud2VicCIsImlhdCI6MTc0MTc1MjY1NywiZXhwIjoxODk5NDMyNjU3fQ.GvfE3z0OVrEAOMbvfMj3M3_SKu6aYlXEF9N6I7ALmrE"
+                  alt="MR Venography"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-pink-200/30 to-indigo-200/30 rounded-full blur-xl" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const CTABanner = () => {
   const handleBookNowClick = () => {
     const contactForm = document.getElementById('contact-form');
@@ -382,6 +604,8 @@ const TeslaMriScan = () => {
       <MachineOverview />
       <Features />
       <WhyChooseUs />
+      <AngiographySection />
+      <VenographySection />
       <CTABanner />
     </div>
   );
